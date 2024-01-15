@@ -1,0 +1,14 @@
+{
+    "name":"Unstop",
+    "version":"1.0",
+    "manifest_version":2,
+    "browser_action":{
+        "default_title":"Unstop",
+        "default_popup":"index.html",
+        "default_icon":"vite.svg"
+    },
+    "icons":{
+        "128":"vite.svg"
+    },
+    "permissions":["activeTab"]
+}
