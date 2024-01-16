@@ -105,10 +105,10 @@ export default function App() {
                   />
                 </div>
                 <div>
-                  <div className="text-base text-blue-600 font-semibold">
+                  <div className="text-base text-blue-600 font-semibold overflow-hidden h-6 text-ellipsis">
                     {data.title}
                   </div>
-                  <div className="text-[#1c4980]">
+                  <div className="text-[#1c4980]  overflow-hidden h-6 text-ellipsis">
                     {data.organisation?.name}
                   </div>
                 </div>
