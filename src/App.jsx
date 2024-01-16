@@ -39,7 +39,7 @@ export default function App() {
           width="82px"
         />
       </div>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         <div>
           <input
             type="text"
@@ -52,7 +52,7 @@ export default function App() {
         <div className="flex">
           <div className="flex justify-between w-[400px]">
             <button
-              className={` font-normal px-4 border border-blue-500 rounded-full ${
+              className={`py-1 px-4 border border-blue-500 rounded-full font-semibold ${
                 type === "in_office"
                   ? "bg-blue-600 text-white font-bold"
                   : "bg-transparent text-blue-600"
@@ -62,7 +62,7 @@ export default function App() {
               In Office
             </button>
             <button
-              className={`font-normal px-4 border border-blue-500 rounded-full ${
+              className={`py-1 px-4 border border-blue-500 rounded-full font-semibold ${
                 type === "hybrid"
                   ? "bg-blue-600 text-white font-bold"
                   : "bg-transparent text-blue-600"
@@ -72,7 +72,7 @@ export default function App() {
               Hybrid
             </button>
             <button
-              className={`font-normal px-4 border border-blue-500 rounded-full ${
+              className={`py-1 px-4 border border-blue-500 rounded-full font-semibold ${
                 type === "wfh"
                   ? "bg-blue-600 text-white font-bold"
                   : "bg-transparent text-blue-600"
@@ -82,7 +82,7 @@ export default function App() {
               Remote
             </button>
             <button
-              className="font-normal px-4 border border-blue-500 rounded-full text-blue-600"
+              className="py-1 px-4 border border-blue-500 rounded-full text-blue-600 font-semibold"
               onClick={() => typeDetails("")}
             >
               Reset
@@ -91,7 +91,7 @@ export default function App() {
         </div>
         <div className="w-[450px] border h-[1px]"></div>
       </div>
-      <div className="flex flex-col gap-10 overflow-y-scroll no-scrollbar w-[400px] h-[350px]">
+      <div className="flex flex-col gap-6 overflow-y-scroll no-scrollbar w-[400px] h-[350px]">
         {final.length > 0 ? (
           final?.map((data) => {
             return (
@@ -115,30 +115,32 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex justify-between">
-                  {data?.jobDetail?.locations[0] && (
-                    <div className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center">
-                      {data?.jobDetail?.locations[0]}
+                  <div className="flex gap-3">
+                    {data?.jobDetail?.locations[0] && (
+                      <div className="border px-3 rounded-lg text-[#1c4980] text-sm flex items-center">
+                        {data?.jobDetail?.locations[0]}
+                      </div>
+                    )}
+                    <div className="flex">
+                      {data?.filters.map((data, i) => {
+                        if (data.type == "eligible") {
+                          return (
+                            <div
+                              key={i}
+                              className="border px-3 rounded-lg text-[#1c4980] text-sm flex items-center"
+                            >
+                              {data?.name.split(" ")[0]}
+                            </div>
+                          );
+                        }
+                      })}
                     </div>
-                  )}
-                  <div className="flex">
-                    {data?.filters.map((data, i) => {
-                      if (data.type == "eligible") {
-                        return (
-                          <div
-                            key={i}
-                            className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center"
-                          >
-                            {data?.name.split(" ")[0]}
-                          </div>
-                        );
-                      }
-                    })}
-                  </div>
-                  <div className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center">
-                    {data.regnRequirements.remain_days}
+                    <div className="border px-3 rounded-lg text-[#1c4980] text-sm flex items-center">
+                      {data.regnRequirements.remain_days}
+                    </div>
                   </div>
                   <div className="flex">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-normal h-8 px-3 border border-blue-700 rounded-full">
+                    <button className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-normal h-8 px-4 border border-blue-700 rounded-full">
                       <a href={data.seo_url} target="_blank">
                         Apply
                       </a>
