@@ -1,9 +1,3 @@
-// 20240113230803
-// https://unstop.com/api/public/opportunity/search-result?opportunity=jobs&page=1&per_page=15&oppstatus=recent
-
-// {
-//     "data": {
-//       "current_page": 1,
 export const data = [
   {
     id: 867009,
@@ -51,16 +45,7 @@ export const data = [
         icon_url:
           "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/datascience.svg",
       },
-      {
-        id: 421,
-        name: "Experienced Professionals",
-        type: "eligible",
-        file_name: "corporate",
-        domain_id: 0,
-        subtype: null,
-        icon_url:
-          "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/corporate.svg",
-      },
+
       {
         id: 425,
         name: "Graduate",
@@ -227,26 +212,6 @@ export const data = [
         icon_url:
           "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/engineering.svg",
       },
-      {
-        id: 425,
-        name: "Graduate",
-        type: "eligible",
-        file_name: "graduate",
-        domain_id: 0,
-        subtype: null,
-        icon_url:
-          "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/graduate.svg",
-      },
-      {
-        id: 421,
-        name: "Experienced Professionals",
-        type: "eligible",
-        file_name: "corporate",
-        domain_id: 0,
-        subtype: null,
-        icon_url:
-          "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/corporate.svg",
-      },
     ],
     isPaid: false,
     festival: null,
@@ -405,16 +370,6 @@ export const data = [
         subtype: null,
         icon_url:
           "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/graduate.svg",
-      },
-      {
-        id: 421,
-        name: "Experienced Professionals",
-        type: "eligible",
-        file_name: "corporate",
-        domain_id: 0,
-        subtype: null,
-        icon_url:
-          "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/corporate.svg",
       },
     ],
     isPaid: false,
@@ -1111,6 +1066,14 @@ export const data = [
         pre_placement_opportunity: null,
       },
     ],
+    jobDetail: {
+      entity_id: 867669,
+      max_salary: 1500000,
+      currency: "fa-rupee",
+      locations: ["Noida"],
+      type: "wfh",
+      not_disclosed: false,
+    },
     end_date: "2024-02-03T00:00:00+05:30",
     start_date: "2024-01-13T00:00:00+05:30",
     region: "online",
@@ -1891,7 +1854,7 @@ export const data = [
       entity_id: 869022,
       max_salary: 300000,
       currency: "fa-rupee",
-      locations: ["Visakhapatnam", "Vijayawada", "Warangal", "Rajahmundry"],
+      locations: ["Warangal", "Rajahmundry"],
       type: "hybrid",
       not_disclosed: false,
     },
@@ -2359,7 +2322,7 @@ export const data = [
       entity_id: 869061,
       max_salary: 1500000,
       currency: "fa-rupee",
-      locations: [],
+      locations: ["Delhi"],
       type: "wfh",
       not_disclosed: false,
     },
@@ -2887,16 +2850,6 @@ export const data = [
     },
     filters: [
       {
-        id: 421,
-        name: "Experienced Professionals",
-        type: "eligible",
-        file_name: "corporate",
-        domain_id: 0,
-        subtype: null,
-        icon_url:
-          "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/corporate.svg",
-      },
-      {
         id: 592,
         name: "IT Services",
         type: "category",
@@ -2915,16 +2868,6 @@ export const data = [
         subtype: null,
         icon_url:
           "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/mba.svg",
-      },
-      {
-        id: 424,
-        name: "Postgraduate",
-        type: "eligible",
-        file_name: "postgraduate",
-        domain_id: 0,
-        subtype: null,
-        icon_url:
-          "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/postgraduate.svg",
       },
     ],
     isPaid: false,
@@ -3386,16 +3329,7 @@ export const data = [
         icon_url:
           "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/graduate.svg",
       },
-      {
-        id: 421,
-        name: "Experienced Professionals",
-        type: "eligible",
-        file_name: "corporate",
-        domain_id: 0,
-        subtype: null,
-        icon_url:
-          "https://d8it4huxumps7.cloudfront.net/images/icons/color_icons/corporate.svg",
-      },
+
       {
         id: 453,
         name: "Data Analytics",

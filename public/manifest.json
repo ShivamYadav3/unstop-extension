@@ -5,7 +5,7 @@
     "browser_action":{
         "default_title":"Unstop",
         "default_popup":"index.html",
-        "default_icon":"vite.svg"
+        "default_icon":"USlogo.png"
     },
     "icons":{
         "128":"vite.svg"
