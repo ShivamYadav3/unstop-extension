@@ -43,7 +43,7 @@ export default function App() {
         <div>
           <input
             type="text"
-            className="border outline-none rounded-full h-6 p-4 w-[400px]"
+            className="border outline-none rounded-full h-6 p-4 w-[400px] text-[#1c4980]"
             value={input}
             placeholder="Search Jobs"
             onChange={handleSearch}
@@ -92,61 +92,67 @@ export default function App() {
         <div className="w-[450px] border h-[1px]"></div>
       </div>
       <div className="flex flex-col gap-10 overflow-y-scroll no-scrollbar w-[400px] h-[350px]">
-        {final?.map((data) => {
-          return (
-            <div key={data.id} className="flex flex-col gap-4">
-              <div className="flex gap-4">
-                <div className="flex justify-center items-center">
-                  <img
-                    src={data.logoUrl2}
-                    alt=""
-                    width="45px"
-                    className="rounded-full"
-                  />
-                </div>
-                <div>
-                  <div className="text-base text-blue-600 font-semibold overflow-hidden h-6 text-ellipsis">
-                    {data.title}
+        {final.length > 0 ? (
+          final?.map((data) => {
+            return (
+              <div key={data.id} className="flex flex-col gap-3 shadow pb-3">
+                <div className="flex gap-4">
+                  <div className="flex justify-center items-center">
+                    <img
+                      src={data.logoUrl2}
+                      alt=""
+                      width="45px"
+                      className="rounded-full"
+                    />
                   </div>
-                  <div className="text-[#1c4980]  overflow-hidden h-6 text-ellipsis">
-                    {data.organisation?.name}
+                  <div>
+                    <div className="text-base text-blue-600 font-semibold overflow-hidden h-6 text-ellipsis">
+                      {data.title}
+                    </div>
+                    <div className="text-[#1c4980]  overflow-hidden h-6 text-ellipsis">
+                      {data.organisation?.name}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex justify-between">
-                {data?.jobDetail?.locations[0] && (
+                <div className="flex justify-between">
+                  {data?.jobDetail?.locations[0] && (
+                    <div className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center">
+                      {data?.jobDetail?.locations[0]}
+                    </div>
+                  )}
+                  <div className="flex">
+                    {data?.filters.map((data, i) => {
+                      if (data.type == "eligible") {
+                        return (
+                          <div
+                            key={i}
+                            className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center"
+                          >
+                            {data?.name.split(" ")[0]}
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
                   <div className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center">
-                    {data?.jobDetail?.locations[0]}
+                    {data.regnRequirements.remain_days}
                   </div>
-                )}
-                <div className="flex">
-                  {data?.filters.map((data, i) => {
-                    if (data.type == "eligible") {
-                      return (
-                        <div
-                          key={i}
-                          className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center"
-                        >
-                          {data?.name.split(" ")[0]}
-                        </div>
-                      );
-                    }
-                  })}
-                </div>
-                <div className="border px-4 rounded-lg text-[#1c4980] text-sm flex items-center">
-                  {data.regnRequirements.remain_days}
-                </div>
-                <div className="flex">
-                  <button className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-normal h-8 px-3 border border-blue-700 rounded-full">
-                    <a href={data.seo_url} target="_blank">
-                      Apply
-                    </a>
-                  </button>
+                  <div className="flex">
+                    <button className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-normal h-8 px-3 border border-blue-700 rounded-full">
+                      <a href={data.seo_url} target="_blank">
+                        Apply
+                      </a>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <div className="text-[#1c4980] text-xl font-semibold flex justify-center items-center h-56">
+            No Matching Job Found
+          </div>
+        )}
       </div>
     </div>
   );
